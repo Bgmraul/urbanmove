@@ -22,9 +22,9 @@ class Producto extends BaseController{
             'valoracion'=>$this->vmodel
         ];
 
-        echo view('templates/header', $data);
-        echo view('products/productos', $data);
-        echo view('templates/footer', $data);
+        echo view('templates/header');
+        echo view('productos/productos', $data);
+        echo view('templates/footer');
     }
 
     public function view($productoId = NULL){
@@ -37,9 +37,9 @@ class Producto extends BaseController{
             throw new \CodeIgniter\Exceptions\PageNotFoundException('No podemos encontrar el producto: '. $productoId);
         }
 
-        echo view('templates/header', $data);
+        echo view('templates/header');
         echo view('productos/product_view', $data);
-        echo view('templates/footer', $data);
+        echo view('templates/footer');
     }
 
     public function productoBySeccion($seccion){
@@ -48,7 +48,6 @@ class Producto extends BaseController{
             'producto' => $this->model->getProductosBySeccion($seccion),
             'valoracion'=>$this->vmodel
         ];
-
         return $data;
             
     }

@@ -1,15 +1,15 @@
-<nav id = "categorias-nav" class="categorias_nav">
+<nav class="categorias_nav">
     <div class="categoria">
         <a href="/"><p>Todos</p></a>
     </div>
     <div class="categoria">
-        <a href="seccion/1"><p>Bicicletas</p></a>
+        <a href="/seccion/1"><p>Bicicletas</p></a>
     </div>
     <div class="categoria">
-        <a href="seccion/2"><p>Patinetes</p></a>
+        <a href="/seccion/2"><p>Patinetes</p></a>
     </div>
     <div class="categoria">
-        <a href="seccion/3"><p>Servicios Alquiler</p></a>
+        <a href="/seccion/3"><p>Servicios Alquiler</p></a>
     </div>
 </nav>
 
@@ -48,15 +48,4 @@
 
 <script>
 
-    let navegacion = document.getElementById('categorias-nav');
-   
-    window.addEventListener('scroll', function(e){
-        let position = navegacion.getBoundingClientRect();
-        if(position.top == 0){     
-            navegacion.classList.add('nav_fijo');
-        }else{
-            navegacion.classList.remove('nav_fijo');
-        }
-
-    });
 </script>

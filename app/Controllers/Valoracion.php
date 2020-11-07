@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
     
     use App\Models\ValoracionModel;
-use Exception;
+    use Exception;
 
 class Valoracion extends BaseController{
 

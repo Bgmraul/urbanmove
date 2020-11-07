@@ -31,9 +31,9 @@ class ProductoModel extends Model{
         }
 
         public function getProductosBySeccion($seccion){
-            $productos_seccion = $this->asArray()
+            $productos_seccion = $this
             ->where(['SeccionId'=> $seccion])->findAll();
-            return json_encode($productos_seccion);
+            return $productos_seccion;
         }
         
     }

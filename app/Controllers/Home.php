@@ -14,9 +14,9 @@ class Home extends BaseController
             'valoracion'=>$vmodel
         ];
 
-        echo view('templates/header', $data);
+        echo view('templates/header');
         echo view('productos/productos', $data);
-        echo view('templates/footer', $data);
+        echo view('templates/footer');
 		
 		
 		

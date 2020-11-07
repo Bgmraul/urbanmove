@@ -38,7 +38,7 @@ $routes->get('users/(:segment)', 'Usuario::view/$1');
 $routes->get('usuario', 'Usuario::index');
 $routes->get('producto', 'Producto::index');
 $routes->get('productos/(:segment)', 'Producto::view/$1');
-$routes->get('producto/seccion', 'Producto::index/$1');
+$routes->get('seccion/(:segment)', 'Seccion::index/$1');
 $routes->get('home', 'Home::index');
 $routes->get('home/pruebas', 'Home::pruebas');
 

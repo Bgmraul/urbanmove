@@ -93,14 +93,11 @@
         fetch('/valoracion/datos/<?=$producto['ProductoId']; ?>')
         .then((res) => res.json())
         .then(response => {
-            console.log(response);
+
             puntuacion.innerHTML = response['puntuacionMedia'];
             votaciones.innerHTML = response['votaciones'];
         }).catch(error => console.log(error))
 
     });
-
-    
-
 </script>
 
