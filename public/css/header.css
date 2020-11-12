@@ -12,7 +12,7 @@
     10px 10px 15px var(--sobra_oscura);
     height: 25vh;
     background-color: rgb(255, 255, 255);
-    z-index: 3; 
+    z-index: 9; 
     position: relative;
     margin-bottom: 5vh;
 }
@@ -85,8 +85,8 @@ svg{
 
 /*Página Formulario Inicio de Sesión*/
 .container_form{
-    transform: translateY(-100vh);
-    display: none;
+   display: none;
+    transform: translateY(-75vh);
     width: 70vw;
     margin: auto;
     box-shadow: 
@@ -95,8 +95,10 @@ svg{
     border-left: 0.1em solid rgba(114, 246, 255, 0.65);
     border-right: 0.1em solid rgba(114, 246, 255, 0.65);
     border-bottom: 0.1em solid rgba(114, 246, 255, 0.65);
-    z-index: 2;
-    position: relative;
+    z-index: 4;
+    position: absolute;
+    left: 15vw;
+    top: 25vh;
     background-color: white;
 }
 .formulario_sesion{
@@ -109,7 +111,7 @@ svg{
     display: block;
     width: 60%;
     height: 5vh;
-    margin: 10vh auto;
+    margin: 5vh auto;
     border:none;
     border-bottom: solid thin rgba(114, 246, 255, 0.65);
     text-align: center;
@@ -120,8 +122,8 @@ svg{
 
 .formulario_sesion input[type="submit"]{
     appearance: none;
-    width: 50%;
-    height: 40%;
+    width: 20%;
+    height: 60%;
     background-color: white;
     border: thin solid rgba(114, 246, 255, 0.65);
     border-radius:  5em;
@@ -137,10 +139,10 @@ svg{
      inset 10px 10px 15px rgba(70,70,70,0.12);
     cursor: pointer;
 }
-.separador{
+/* .separador{
     height: 15vh;
     background: linear-gradient(0, rgba(114, 246, 255, 0.85),rgba(114, 246, 255, 0.65), white);
     clip-path: polygon(100% 0, 0 0, 100% 100%);
-}
+} */
 
 

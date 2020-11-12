@@ -26,7 +26,8 @@
     grid-template-columns: 40% 50%;
     grid-template-rows: repeat(2, auto);
     justify-items: center;
-    column-gap: 5%;
+    column-gap: 5vw;
+    row-gap: 10vh;
     padding: 5%;
 }
 .product_img_view{
@@ -38,9 +39,7 @@
 }
 .container_valoracion{
     grid-row: 1/2;
-    display: flex;
-    flex-direction: column;
-    
+    height: 30vh;
 }
 .valoracion_view{
     grid-column: 2/3;
@@ -60,21 +59,17 @@
     text-align: center;
     font-family: 'Electrolize', sans-serif;
     font-size: 1.3vw;
-    
+    height: 15vh;
 }
 .container_votacion_view{
     grid-column: 2/3;
     grid-row: 3/4;
 }
-form{
+.form_valoracion{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: .5vw;
     align-items: center;
-}
-
-.respuesta{
-    margin-top: 2vh;
 }
 .container_radio{
     display: flex;
@@ -105,7 +100,7 @@ form{
     filter: drop-shadow(0.1em 0.2em 0.5em rgba(114, 246, 255, 0.8));
     cursor: pointer;
 }
-.container_radio input:checked ~ .checkmark svg{
+.container_radio input:checked  ~ .checkmark svg{
     transform: scale(115%);
     filter: drop-shadow(0.1em 0.2em 0.5em rgba(114, 246, 255, 0.8));
     fill: rgba(114, 246, 255, 1);
@@ -117,13 +112,7 @@ form{
     grid-row: 2/3;
     font-size: 1.4vw;
     text-align: justify;
-    padding: 5%;
-    margin-top: 2%;
-    margin-bottom: -5%;
-    max-height: 15vh;
-    overflow: hidden;
     font-family: 'Share Tech', sans-serif;
-    
 }   
 
 

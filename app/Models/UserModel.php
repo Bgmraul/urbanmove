@@ -6,7 +6,8 @@
 
         protected $table = 'usuario';
         protected $primaryKey = "UsuarioId";
-        protected $allowedFields = ['Username', 'Contrasena', 'Email', 'Experiencia', 'Activo', 'Administrador'];
+        protected $allowedFields = ['Username', 'Contrasena', 'Email', 
+        'Experiencia', 'Activo', 'Administrador'];
 
         public function getUsers($userName = false){
 
@@ -21,14 +22,31 @@
 
         public function login($userName, $password){
 
-            return $this->asArray()
+            $datos_usuario = $this->asArray()
             ->where(['Username' => $userName])
             ->where(['Contrasena' => $password])
             ->first();
-        
-        }
+
+            if(isset($datos_usuario)){
+                $usuario=[
+                    'UsuarioId' => $datos_usuario['UsuarioId'],
+                    'Username' => $datos_usuario['Username'],
+                    'Registro' => $datos_usuario['Registro'],
+                    'Experiencia'=> $datos_usuario['Experiencia'],
+                    'Admin'=>$datos_usuario['Administrador']
+                ];
+                $session = session();
+                $session->set($usuario);
+    
+                return $datos_usuario;
+            }else{
+
+                $datos_usuario= null;
+                return $datos_usuario;
+            }
 
         
+        }
     }
 
 ?>

@@ -2,13 +2,14 @@
     
     use App\Models\ValoracionModel;
     use Exception;
+use phpDocumentor\Reflection\Types\Null_;
 
 class Valoracion extends BaseController{
 
     public function insertarValoracion(){
         $model = new ValoracionModel();
 
-        if( $this->request->getMethod() == 'post' ){
+        if( $this->request->getMethod() == 'post' and session('UsuarioId') != Null){
             
             $productoId = $this->request->getPost('productoId');
             $usuarioId = $this->request->getPost('usuarioId');
@@ -31,6 +32,8 @@ class Valoracion extends BaseController{
             echo json_encode('error');
            }
 
+        }else{
+            echo json_encode('session_error');
         }
     }
 
