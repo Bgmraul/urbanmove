@@ -41,7 +41,6 @@
             <input type="text" id="username" name="username" placeholder="Username" value="" autocomplete="off">
             <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" value="">
             <input type="submit" value="Acceder">
-            <div>X</div>
         </form>
         
     </div>

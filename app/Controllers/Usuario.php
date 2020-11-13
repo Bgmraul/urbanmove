@@ -71,15 +71,17 @@ class Usuario extends BaseController{
             $userName = $_POST['username'];
             $pass = $_POST['contrasena'];
             $user = $this->model->login($userName, $pass);
-        }
 
-        if(isset($user)){
+            if(isset($user)){
           
-            echo session('Username');
-
-        }else{
-            echo "No existe";
+                return redirect()->to('/');
+    
+            }else{
+                echo "No existe";
+            }
         }
+
+
 
     }
 }
