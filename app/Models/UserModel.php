@@ -31,6 +31,7 @@
                 $usuario=[
                     'UsuarioId' => $datos_usuario['UsuarioId'],
                     'Username' => $datos_usuario['Username'],
+                    'Email'=> $datos_usuario['Email'],
                     'Registro' => $datos_usuario['Registro'],
                     'Experiencia'=> $datos_usuario['Experiencia'],
                     'Admin'=>$datos_usuario['Administrador']
@@ -41,7 +42,7 @@
                 return $datos_usuario;
             }else{
 
-                $datos_usuario= null;
+                $datos_usuario = null;
                 return $datos_usuario;
             }
 

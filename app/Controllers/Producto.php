@@ -15,17 +15,21 @@ class Producto extends BaseController{
         $this->vmodel = new ValoracionModel();
     }
 
-    public function index(){
+    // public function index(){
 
-        $data = [
-            'producto' => $this->model->getAllProductos(),
-            'valoracion'=>$this->vmodel
-        ];
+    //     $data = [
+    //         'producto' => $this->model->getAllProductos(),
+    //         'valoracion'=>$this->vmodel
+    //     ];
 
-        echo view('templates/header');
-        echo view('productos/productos', $data);
-        echo view('templates/footer');
-    }
+    //     if(session('Username') != null){
+    //         echo view('templates/header_loged');
+    //     }else{
+    //         echo view('templates/header');   
+    //     }
+    //     echo view('productos/productos', $data);
+    //     echo view('templates/footer');
+    // }
 
     public function view($productoId = NULL){
         $data= [
@@ -37,7 +41,11 @@ class Producto extends BaseController{
             throw new \CodeIgniter\Exceptions\PageNotFoundException('No podemos encontrar el producto: '. $productoId);
         }
 
-        echo view('templates/header');
+        if(session('Username') != null){
+            echo view('templates/header_loged');
+        }else{
+            echo view('templates/header');   
+        }
         echo view('productos/product_view', $data);
         echo view('templates/footer');
     }

@@ -14,12 +14,13 @@ class Home extends BaseController
             'valoracion'=>$vmodel
         ];
 
-        echo view('templates/header');
+        if(session('Username') != null){
+            echo view('templates/header_loged');
+        }else{
+            echo view('templates/header');   
+        }
         echo view('productos/productos', $data);
         echo view('templates/footer');
-		
-		
-		
     }
     
     

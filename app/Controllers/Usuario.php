@@ -81,7 +81,10 @@ class Usuario extends BaseController{
             }
         }
 
+    }
 
-
+    public function perfil(){
+        echo view('users/perfil');
     }
 }
+
