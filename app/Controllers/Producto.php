@@ -15,22 +15,6 @@ class Producto extends BaseController{
         $this->vmodel = new ValoracionModel();
     }
 
-    // public function index(){
-
-    //     $data = [
-    //         'producto' => $this->model->getAllProductos(),
-    //         'valoracion'=>$this->vmodel
-    //     ];
-
-    //     if(session('Username') != null){
-    //         echo view('templates/header_loged');
-    //     }else{
-    //         echo view('templates/header');   
-    //     }
-    //     echo view('productos/productos', $data);
-    //     echo view('templates/footer');
-    // }
-
     public function view($productoId = NULL){
         $data= [
             'producto' => $this->model->getProducto($productoId),
