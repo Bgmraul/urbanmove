@@ -27,11 +27,10 @@ class Home extends BaseController
     /*¡¡¡¡¡¡¡   ELIMINAR CUANDO ACABE EL PROYECTO    !!!!!!!!!!!*/
 
     public function pruebas(){
-        $vmodel = new ValoracionModel();
-        $valoraciones = $vmodel->getValoraciones(2);
-
-        var_dump($valoraciones);
-
+        $model = new ProductoModel();
+        $productos_seccion = $model->getProductosBySeccion(2);
+        var_dump($productos_seccion);
+        
     }
 
 }
