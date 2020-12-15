@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'users/create', 'Usuario::create');
 $routes->match(['get', 'post'], '/valoracion', 'Valoracion::insertarValoracion');
+$routes->match(['get', 'post'], '/comentario/guardarComentarios', 'Comentario::guardarComentarios');
 $routes->get('valoracion/datos/(:segment)', 'Valoracion::obtenerValoracion/$1');
 $routes->get('users/(:segment)', 'Usuario::view/$1');
 $routes->get('usuario', 'Usuario::index');
