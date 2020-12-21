@@ -33,11 +33,16 @@
             }
 
             if(isset($datos_usuario)){
+                
+                #Damos formato dd/mm/YYYY a la fecha de registro.
+                $fecha_registro = strtotime($datos_usuario['Registro']);
+                $fecha_registro = strftime('%d/%m/%Y', $fecha_registro);
+
                 $usuario=[
                     'UsuarioId' => $datos_usuario['UsuarioId'],
                     'Username' => $datos_usuario['Username'],
                     'Email'=> $datos_usuario['Email'],
-                    'Registro' => $datos_usuario['Registro'],
+                    'Registro' => $fecha_registro,
                     'Experiencia'=> $datos_usuario['Experiencia'],
                     'Admin'=>$datos_usuario['Administrador']
                 ];
