@@ -15,9 +15,10 @@ class Comentario extends BaseController{
 
         $comentarios = $this->model->getComentarios($productoId);
         if(empty($comentarios)){
+            $fecha = date('d-m-Y');
             $contenido = [
                 "Contenido" => "No existen comentarios todavía.",
-                "Fecha" => ""
+                "Fecha" => $fecha
             ];
             $comentarios = [$contenido];
             return $comentarios;
