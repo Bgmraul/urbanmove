@@ -66,6 +66,7 @@
             <p><?=esc($producto['Descripcion']); ?></p>
         </div>
     </div>
+    
     <?php if(session('UsuarioId') != NULL): ?>
         <div class="">
             <form method="POST" action="<?= base_url("/comentario/guardarComentarios")?>">
@@ -79,10 +80,9 @@
 
     <?php foreach($comentario as $comentario_item): ?>
         <div class="comentario">
-            <p><?= esc($comentario_item['Fecha']) ?></p>
+            <p><?= esc(strftime('%d/%m/%Y', strtotime($comentario_item['Fecha']))) ?></p>
             <p><?= esc($comentario_item['Contenido']) ?></p>
         </div>
-
     <?php endforeach; ?>
 
 </div>
