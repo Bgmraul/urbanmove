@@ -4,6 +4,7 @@
     use App\Models\UserModel;
     use CodeIgniter\Controller;
     use CodeIgniter\Model;
+    use DateTime;
 
 class Usuario extends BaseController{
 
@@ -121,5 +122,58 @@ class Usuario extends BaseController{
                 return redirect()->to('/');
             }
         }
+    }
+
+
+    public function comprobarValoraciones($valoraciones){
+
+        if($valoraciones >= 6 and $valoraciones <= 50){
+            return 'intermedio';
+
+        }elseif($valoraciones > 50){
+            return 'experto';
+        }else{
+            return;
+        }
+
+    }
+
+    public function comprobarAntiguedad($fecha_registro){
+        $registro = new DateTime($fecha_registro);
+        $fecha_actual = new DateTime('now');
+        $antiguedad = $fecha_actual->diff($registro);
+        $antiguedad->format('%d');
+        if($antiguedad->days >= 181 and $antiguedad->days <= 730 ){
+            return 'intermedio';
+        }elseif($antiguedad->days > 730) {
+            return 'experto';
+        }else{
+            return;
+        }
+        
+    }
+
+    public function actualizarExperiencia($valoraciones, $fecha_registro, $usuarioId, $experiencia_actual){
+
+        $exp_valoracion = $this->comprobarValoraciones($valoraciones);
+        $exp_antiguedad = $this->comprobarAntiguedad($fecha_registro);
+
+        if($experiencia_actual == 'Principiante'){
+            if($exp_valoracion == 'intermedio' or $exp_valoracion == 'experto' and $exp_antiguedad == 'intermedio' or $exp_antiguedad == 'experto'){
+
+                $experiencia = 'Intermedio';
+                $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
+                return;
+            }
+        }
+     
+        if($experiencia_actual == 'Intermedio'){
+            if($exp_valoracion == 'experto' and $exp_antiguedad == 'experto'){
+                $experiencia = 'Experto';
+                $this->model->actualizarExperienciaModel($experiencia, $usuarioId);
+    
+            }
+        }
+
     }
 }
