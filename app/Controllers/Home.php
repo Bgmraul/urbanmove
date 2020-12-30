@@ -3,6 +3,8 @@
 use App\Models\ProductoModel;
 use App\Models\ValoracionModel;
 
+use App\Controllers\Comentario;
+
 class Home extends BaseController
 {
 	public function index()
@@ -27,11 +29,9 @@ class Home extends BaseController
     /*¡¡¡¡¡¡¡   ELIMINAR CUANDO ACABE EL PROYECTO    !!!!!!!!!!!*/
 
     public function pruebas(){
-        $vmodel = new ValoracionModel();
-        $valoraciones = $vmodel->getValoraciones(2);
-
-        var_dump($valoraciones);
-
+    
+        var_dump(session('Registro'));
+        
     }
 
 }
